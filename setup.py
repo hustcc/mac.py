@@ -3,7 +3,7 @@ from distutils.core import setup
 from setuptools import find_packages
 
 setup(name = 'mac.py',
-      version = '1.0.1',
+      version = '1.0.2',
       description = 'A python lib to search Manufacturer of mac address',
       long_description = '',
       author = 'hustcc',
@@ -31,5 +31,5 @@ setup(name = 'mac.py',
       packages = find_packages('src'),
       package_dir = {'':'src'},
       include_package_data = True,
-      package_data =  {'src':['oui.*']}
+      package_data =  {'src':['macpy/oui_3.dict', 'macpy/oui_3.dict']}
 )

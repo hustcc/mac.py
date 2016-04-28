@@ -8,6 +8,8 @@ Created on 2016-04-28
 
 import re
 import os
+import sys
+
 try:
     import cPickle as pickle
 except:
@@ -19,8 +21,8 @@ class Mac(object):
     def __init__(self):
         self.__parse_cnt = 0
         self.__oui_dict = {}
-        self._root_path = os.path.normpath(os.path.dirname(__file__))
-        self.__persistence_file = os.path.normpath(os.path.join(os.path.dirname(__file__), 'oui.dict'))
+        self.__PY2 = sys.version_info[0] == 2
+        self.__persistence_file = os.path.normpath(os.path.join(os.path.dirname(__file__), 'oui_%s.dict' % ((self.__PY2 and "2") or "3")))
 
     def __process_line(self, fp, current_line):
         m = re.match(r"^[0-9A-Z]{6}", current_line)
@@ -45,7 +47,10 @@ class Mac(object):
     def _parse(self):
         '''parse the mac file, save as the serialize file. only use for dist new version
         '''
-        oui_fp = open('oui.txt', 'r')
+        if self.__PY2:
+            oui_fp = open('oui.txt', 'r')
+        else:
+            oui_fp = open('oui.txt', 'r', encoding = 'utf8')
         while True:
             line = oui_fp.readline()
             if line:

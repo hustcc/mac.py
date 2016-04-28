@@ -7,5 +7,5 @@
 MANIFEST
 dist
 build
-src/mac.py.egg-info/PKG-INFO
+src/mac.py.egg-info/*
 
