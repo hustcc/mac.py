@@ -27,8 +27,8 @@ class TestCase(unittest.TestCase):
         self.assertEqual(r_2, r_3)
         self.assertEqual(r_3, {'re': 'Brea  CA  92821', 'com': 'FOXCONN', 'addr': '105 S Puente St.', 'co': 'US'})
         
-        self.assertIsNone(r_4)
-        self.assertIsNone(r_5)
+        self.assertEqual(r_4, None)
+        self.assertEqual(r_5, None)
 
 if __name__ =='__main__':
     unittest.main()
