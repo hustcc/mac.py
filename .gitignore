@@ -1,0 +1,9 @@
+*.pyc
+.settings
+.idea
+.project
+.pydevproject
+
+MANIFEST
+dist
+build
