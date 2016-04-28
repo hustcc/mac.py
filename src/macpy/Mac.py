@@ -75,7 +75,7 @@ class Mac(object):
         if not self.__oui_dict:
             if not os.path.exists(self.__persistence_file):
                 self._parse()
-            tmp_fp = open(self.__persistence_file, 'r')
+            tmp_fp = open(self.__persistence_file, 'rb')
             self.__oui_dict = pickle.load(tmp_fp)
             tmp_fp.close()
 
