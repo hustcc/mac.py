@@ -14,8 +14,8 @@ before_install:
 install:
   - pip install .
 before_script:
-  - chmod 777 ./tests/do_test.sh
+  - chmod 777 ./test/do_test.sh
 # command to run tests
-script: ./tests/do_test.sh
+script: ./test/do_test.sh
 after_success:
   - codecov

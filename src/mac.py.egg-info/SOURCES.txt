@@ -1,0 +1,11 @@
+MANIFEST.in
+setup.py
+src/mac.py.egg-info/PKG-INFO
+src/mac.py.egg-info/SOURCES.txt
+src/mac.py.egg-info/dependency_links.txt
+src/mac.py.egg-info/top_level.txt
+src/macpy/Mac.py
+src/macpy/__init__.py
+src/macpy/oui.dict
+src/macpy/oui.txt
+test/test_unitest.py

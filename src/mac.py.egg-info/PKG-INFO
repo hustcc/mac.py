@@ -1,0 +1,25 @@
+Metadata-Version: 1.1
+Name: mac.py
+Version: 1.0.0
+Summary: A python lib to search Manufacturer of mac address
+Home-page: https://github.com/hustcc/mac.py
+Author: hustcc
+Author-email: i@hust.cc
+License: MIT
+Description: UNKNOWN
+Keywords: mac.py,mac address,mac Manufacturer
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Natural Language :: Chinese (Simplified)
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.5
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Utilities
