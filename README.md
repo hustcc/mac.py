@@ -2,6 +2,8 @@
 
 A python lib to search Manufacturer of mac address. With only one method `search`.
 
+[![Build Status](https://travis-ci.org/hustcc/mac.py.svg?branch=master)](https://travis-ci.org/hustcc/mac.py) [![PyPi Status](https://img.shields.io/pypi/v/mac.py.svg)](https://pypi.python.org/pypi/mac.py) [![Python Versions](https://img.shields.io/pypi/pyversions/mac.py.svg)](https://pypi.python.org/pypi/mac.py) [![PyPi Downloads](https://img.shields.io/pypi/dm/mac.py.svg)](https://pypi.python.org/pypi/mac.py)
+
 ## Install
 
 ```sh
