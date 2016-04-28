@@ -23,9 +23,9 @@ class TestCase(unittest.TestCase):
         r_4 = self.mac.search('00')
         r_5 = self.mac.search('')
         
-        self.assertDictEqual(r_1, r_2)
-        self.assertDictEqual(r_2, r_3)
-        self.assertDictEqual(r_3, {'re': 'Brea  CA  92821', 'com': 'FOXCONN', 'addr': '105 S Puente St.', 'co': 'US'})
+        self.assertEqual(r_1, r_2)
+        self.assertEqual(r_2, r_3)
+        self.assertEqual(r_3, {'re': 'Brea  CA  92821', 'com': 'FOXCONN', 'addr': '105 S Puente St.', 'co': 'US'})
         
         self.assertIsNone(r_4)
         self.assertIsNone(r_5)
