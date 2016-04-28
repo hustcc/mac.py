@@ -22,7 +22,8 @@ class Mac(object):
         self.__parse_cnt = 0
         self.__oui_dict = {}
         self.__PY2 = sys.version_info[0] == 2
-        self.__persistence_file = os.path.normpath(os.path.join(os.path.dirname(__file__), 'oui_%s.dict' % ((self.__PY2 and "2") or "3")))
+        fix = (self.__PY2 and "2") or "3"
+        self.__persistence_file = os.path.normpath(os.path.join(os.path.dirname(__file__), 'oui_%s.dict' % (fix)))
 
     def __process_line(self, fp, current_line):
         m = re.match(r"^[0-9A-Z]{6}", current_line)
@@ -50,7 +51,7 @@ class Mac(object):
         if self.__PY2:
             oui_fp = open('oui.txt', 'r')
         else:
-            oui_fp = open('oui.txt', 'r', encoding = 'utf8')
+            oui_fp = open('oui.txt', 'r', encoding='utf8')
         while True:
             line = oui_fp.readline()
             if line:
