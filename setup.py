@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 from distutils.core import setup
 from setuptools import find_packages
-from src import macpy
 
 setup(name = 'mac.py',
-      version = macpy.__version__,
+      version = '1.0.1',
       description = 'A python lib to search Manufacturer of mac address',
       long_description = '',
       author = 'hustcc',
