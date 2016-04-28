@@ -3,7 +3,7 @@ from distutils.core import setup
 from setuptools import find_packages
 
 setup(name = 'mac.py',
-      version = '1.0.2',
+      version = '1.0.3',
       description = 'A python lib to search Manufacturer of mac address',
       long_description = '',
       author = 'hustcc',
