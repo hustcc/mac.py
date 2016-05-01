@@ -26,8 +26,7 @@ mac.search('') # None
 
 ```
 
-
-## Result
+## Output
 
 search result will be
 
