@@ -68,6 +68,7 @@ class Mac(object):
     def __format(self, mac):
         mac = mac or ''
         mac = mac.replace('-', '').replace(':', '')[0:6]
+        mac = mac.upper()
         return mac
 
     def search(self, mac):
