@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 from distutils.core import setup
 from setuptools import find_packages
 
@@ -9,7 +10,7 @@ setup(name = 'mac.py',
       author = 'hustcc',
       author_email = 'i@hust.cc',
       url = 'https://github.com/hustcc/mac.py',
-      license = 'MIT',
+      license = 'Expat',
       install_requires = [],
       classifiers = [
         'Intended Audience :: Developers',
