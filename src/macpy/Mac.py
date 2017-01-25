@@ -42,16 +42,16 @@ class Mac(object):
                 self.__oui_dict[mac_24]['addr'] = fp.readline().strip()
                 self.__oui_dict[mac_24]['re'] = fp.readline().strip()
                 self.__oui_dict[mac_24]['co'] = fp.readline().strip()
-        else:
-            pass
+            return True
+        return False
 
-    def _parse(self):
+    def _parse(self, oui_path='oui.txt'):
         '''parse the mac file, save as the serialize file. only use for dist new version
         '''
         if self.__PY2:
-            oui_fp = open('oui.txt', 'r')
+            oui_fp = open(oui_path, 'r')
         else:
-            oui_fp = open('oui.txt', 'r', encoding='utf8')
+            oui_fp = open(oui_path, 'r', encoding='utf8')
         while True:
             line = oui_fp.readline()
             if line:
