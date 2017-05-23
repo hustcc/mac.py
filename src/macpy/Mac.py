@@ -9,6 +9,7 @@ Created on 2016-04-28
 import re
 import os
 import sys
+import requests
 
 try:
     import cPickle as pickle
@@ -17,13 +18,13 @@ except:
 
 
 class Mac(object):
-
     def __init__(self):
         self.__parse_cnt = 0
         self.__oui_dict = {}
         self.__PY2 = sys.version_info[0] == 2
         fix = (self.__PY2 and "2") or "3"
         self.__persistence_file = os.path.normpath(os.path.join(os.path.dirname(__file__), 'oui_%s.dict' % (fix)))
+        self.__raw_file = os.path.normpath(os.path.join(os.path.dirname(__file__), 'oui.txt'))
 
     def __process_line(self, fp, current_line):
         m = re.match(r"^[0-9A-Z]{6}", current_line)
@@ -49,9 +50,9 @@ class Mac(object):
         '''parse the mac file, save as the serialize file. only use for dist new version
         '''
         if self.__PY2:
-            oui_fp = open('oui.txt', 'r')
+            oui_fp = open(self.__raw_file, 'r')
         else:
-            oui_fp = open('oui.txt', 'r', encoding='utf8')
+            oui_fp = open(self.__raw_file, 'r', encoding='utf8')
         while True:
             line = oui_fp.readline()
             if line:
@@ -87,3 +88,37 @@ class Mac(object):
             tmp_fp.close()
 
         return self.__oui_dict.get(mac, None)
+
+    def update_dictionary(self, file_path):
+        """
+        replace the old oui.txt with a new oui.txt to update the dictionary of mac address
+        :param file_path: the file path of new oui.txt file
+        :return:
+        """
+        source_file = open(file_path, 'rb')
+        data = source_file.read()
+        source_file.close()
+        with open(self.__raw_file, 'wb')as f:
+            f.write(data)
+        self._parse()
+
+    def update_dictionary_online(self, url='http://standards-oui.ieee.org/oui/oui.txt'):
+        """
+        replace the old oui.txt with a new oui.txt, which will be download from param [url]
+        :param url: a http path of oui.txt on ieee.org
+        :return:
+        """
+        print(
+            """downloading 'oui.txt' from '{url}'
+            that may take a long time
+            please wait ……
+            """.format(url=url)
+        )
+        r = requests.get(url)
+        print("finish download")
+        with open(self.__raw_file + '.new', "wb") as f:
+            f.write(r.content)
+        mac = Mac()
+        mac.update_dictionary(self.__raw_file + '.new')
+        os.remove(self.__raw_file + '.new')
+        print("done")
