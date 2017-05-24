@@ -3,7 +3,7 @@
 import unittest
 try:
     from src.macpy import Mac
-except:
+except ImportError:
     from macpy import Mac
 
 
@@ -29,10 +29,13 @@ class TestCase(unittest.TestCase):
         self.assertEqual(r_1, r_2)
         self.assertEqual(r_2, r_3)
         self.assertEqual(r_3, r_4)
-        self.assertEqual(r_4, {'re': 'Brea  CA  92821', 'com': 'FOXCONN', 'addr': '105 S Puente St.', 'co': 'US'})
+        self.assertEqual(r_4, {'re': 'Brea  CA  92821',
+                               'com': 'FOXCONN',
+                               'addr': '105 S Puente St.',
+                               'co': 'US'})
         
         self.assertEqual(r_5, None)
         self.assertEqual(r_6, None)
 
-if __name__ =='__main__':
+if __name__ == '__main__':
     unittest.main()
