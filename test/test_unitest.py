@@ -35,10 +35,12 @@ class TestCase(unittest.TestCase):
         self.assertEqual(r_5, None)
         self.assertEqual(r_6, None)
 
-    # test_update_dictionary method
-    def test_update_dictionary(self):
-        self.mac.update_dictionary("oui.txt.new")
-        self.test_search_mac()
+    # test_update_dictionary method,
+    # update_dictionary will be test when update_dictionary_online is being tested.
+    # so there is no need to run this test.
+#     def test_update_dictionary(self):
+#         self.mac.update_dictionary("oui.txt.new")
+#         self.test_search_mac()
 
     def test_update_dictionary_online(self):
         self.mac.update_dictionary_online()
