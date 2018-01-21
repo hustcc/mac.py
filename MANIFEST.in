@@ -1,1 +1,1 @@
-recursive-include src oui_*.*
+recursive-include src oui.*
